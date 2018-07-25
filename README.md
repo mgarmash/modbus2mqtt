@@ -117,6 +117,9 @@ There is only limited sanity checking currently on the payload values.
 
 Changelog
 ---------
+* 0.5 - 2018/0726 - mgarmash 
+  - Add Dockerfile
+    run example: docker run -it --rm --device /dev/rs485:/dev/rs485 -v $(pwd)/registers.csv:/opt/registers.csv mgarmash/modbus2mqtt --mqtt-host localhost --mqtt-port 1883 --mqtt-topic modbus --rtu /dev/rs485 --rtu-baud=9600 --rtu-parity none --log DEBUG --registers /opt/registers.csv
 * 0.4 - 2015/07/31 - nzfarmer
   - added support for MQTT subscribe + Mobdus write
     Topics are of the form: prefix/set/<slaveid (0:255)>/<fc (5,6)>/<register>  (payload = value to write)
